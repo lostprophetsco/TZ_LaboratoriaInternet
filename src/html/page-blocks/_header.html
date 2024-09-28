@@ -1,1 +1,42 @@
-<header class="header"></header>
+<header class="header header--with-hero">
+  <div class="container header__container">
+    <a class="header__logo" href="#" alt="Logo" aria-label="Логотип">
+      <img
+        src="@img/logo-light.svg"
+        class="header__logo-image"
+        width="120"
+        height="24"
+        alt="Логотип"
+      />
+    </a>
+
+    <nav class="header__nav" aria-label="Навигация" role="navigation">
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Как это работает</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">3-й блок</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Вопросы и ответы</a>
+        </li>
+        <li class="header__nav-item">
+          <a class="header__nav-link" href="#">Форма</a>
+        </li>
+      </ul>
+    </nav>
+
+    <button
+      class="header__burger burger"
+      type="button"
+      aria-label="Открыть меню"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  @@include('../bem-blocks/_hero.html')
+</header>

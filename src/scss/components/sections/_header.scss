@@ -1,0 +1,198 @@
+@use '../../theme/theme' as theme;
+@use '../../mixins' as mixins;
+
+.header {
+  $header-bg: url("../../../images/css/header-background320.jpg");
+  $header-webp: url("../../../images/css/header-background320.webp");
+  $header-avif: url("../../../images/css/header-background320.avif");
+  $header768-bg: url("../../../images/css/header-background768.jpg");
+  $header768-webp: url("../../../images/css/header-background768.webp");
+  $header768-avif: url("../../../images/css/header-background768.avif");
+  $header1024-bg: url("../../../images/css/header-background.jpg");
+  $header1024-webp: url("../../../images/css/header-background.webp");
+  $header1024-avif: url("../../../images/css/header-background.avif");
+
+  display: flex;
+  flex-flow: column;
+  padding: 10px 0;
+  background-color: var(--colors-primary);
+
+  @include theme.md {
+    padding: 28px 0;
+  }
+
+  // .header--with-hero
+  &--with-hero {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @supports (height: 100dvh) {
+      height: 100dvh;
+    }
+
+    @include mixins.image-set($header-bg, $header-webp, $header-avif);
+
+    @include theme.sm {
+      @include mixins.image-set($header768-bg, $header768-webp, $header768-avif);
+    }
+
+    @include theme.md {
+      @include mixins.image-set($header1024-bg, $header1024-webp, $header1024-avif);
+    }
+
+    // .header--with-hero::after
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: '';
+      background-color: var(--colors-primary);
+      opacity: 0.8;
+    }
+  }
+
+  // .header__container
+  &__container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-grow: 0;
+    flex-flow: row nowrap;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .header__logo
+  &__logo {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+
+    // .header__logo--active
+    &--active {
+      z-index: 10;
+      background-image: url('../../../images/logo-dark.svg');
+
+      @include theme.md {
+        background-image: url('../../../images/logo-light.svg');
+      }
+
+      // .header__logo--active img
+      img{
+        opacity: 0;
+      }
+    }
+  }
+
+  // .header__nav
+  &__nav {
+    display: none;
+
+    @include theme.md {
+      display: flex;
+      flex-grow: 1;
+      justify-content: flex-end;
+    }
+
+    // .header__nav--active
+    &--active {
+      position: fixed;
+      inset: 0;
+      z-index: 4;
+      display: block;
+      padding-top: 80px;
+      background-color: var(--colors-white);
+
+      @include theme.md {
+        position: static;
+        inset: unset;
+        display: flex;
+        width: auto;
+        padding: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  // .header__nav-list
+  &__nav-list {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    @include theme.md {
+      flex-flow: row nowrap;
+      gap: 24px;
+      justify-content: flex-end;
+      width: auto;
+    }
+  }
+
+  // .header__nav-item
+  &__nav-item {
+    width: 100%;
+    padding: 0 16px;
+    border-top: 1px solid var(--colors-light-gray);
+
+    @include theme.md {
+      width: auto;
+      padding: 0;
+      border: none;
+    }
+
+    // .header__nav-item:last-child
+    &:last-child {
+      border-bottom: 1px solid var(--colors-light-gray);
+
+      @include theme.md {
+        border: none;
+      }
+    }
+  }
+
+  // .header__nav-link
+  &__nav-link {
+    display: block;
+    width: 100%;
+    padding: 16px 24px 16px 16px;
+    color: var(--colors-gray);
+    text-decoration: none;
+    background-image: url('../../../images/css/nav-item-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 24px;
+
+    @include theme.text-style-helper(b18);
+
+    @include theme.md {
+      padding: 0;
+      color: var(--colors-white);
+      background: none;
+
+      @include theme.text-style-helper(b16);
+    }
+
+    // .header__nav-link:hover, .header__nav-link:focus, .header__nav-link:active
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  // .header__burger
+  &__burger {
+    @include theme.md {
+      display: none;
+    }
+  }
+}

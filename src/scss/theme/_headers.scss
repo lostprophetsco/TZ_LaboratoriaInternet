@@ -1,5 +1,25 @@
 @use './theme' as mixins;
 
-// h1 {
-// @include mixins.text-style-helper(h1);
-// }
+h1 {
+  @include mixins.text-style-helper(h1);
+}
+
+h2 {
+	@include mixins.text-style-helper(h2);
+}
+
+h3 {
+	@include mixins.text-style-helper(h3);
+}
+
+h4 {
+	@include mixins.text-style-helper(h4);
+}
+
+h5 {
+	@include mixins.text-style-helper(h5);
+}
+
+h6 {
+	@include mixins.text-style-helper(h6);
+}

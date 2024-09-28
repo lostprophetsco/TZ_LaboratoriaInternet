@@ -1,0 +1,42 @@
+@use '../../theme/theme' as theme;
+
+.hero {
+	position: relative;
+	z-index: 2;
+	flex-grow: 1;
+	color: var(--colors-white);
+	text-align: center;
+
+	// .hero__container
+	&__container {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+	}
+
+	// .hero__text
+	&__text {
+		@include theme.text-style-helper(b16);
+
+		margin-top: 10px;
+
+		@include theme.md {
+			margin-top: 18px;
+		}
+	}
+
+	// .hero__button
+	&__button {
+		margin-top: 26px;
+
+		@include theme.md {
+			margin-top: 40px;
+		}
+
+		@include theme.lg {
+			margin-top: 92px;
+		}
+	}
+}
