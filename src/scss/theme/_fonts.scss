@@ -1,1 +1,23 @@
-/* stylelint-disable */
+@font-face {
+  font-family: GraphikLCG-Bold;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../fonts/GraphikLCG-Bold.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: GraphikLCG-Medium;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../fonts/GraphikLCG-Medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: GraphikLCG;
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/GraphikLCG-Regular.woff2') format('woff2');
+  font-display: swap;
+}

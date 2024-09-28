@@ -1,12 +1,8 @@
 @use './theme/theme' as theme;
-@import 'https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap&subset=cyrillic-ext';
 @import 'mixins';
 @import '../../node_modules/reset-css/sass/reset';
 @import './theme/core';
 @import './theme/theme';
-@import 'components/sections';
-
-// @import 'components';
 
 :root {
   @include theme.grid-settings;
@@ -21,21 +17,4 @@
   @include theme.transition-easing;
   @include theme.shadow;
   @include theme.blur;
-
-  --main-font-family: montserrat, sans-serif;
-  --bg-color-white: #fff;
-  --bg-color-blue: #2A5EA9;
-  --border-color-gray: #EBEBEB;
-  --border-color-gold: #D2B06B;
-  --border-color-blue: #2A5EA9;
-  --font-size-h2: clamp(22px, 5vw, 37px);
-  --font-size-h3: clamp(18px, 5vw, 22px);
-  --font-line-height-h2: clamp(28px, 7vw, 48px);
-  --font-line-height-h3: 28px;
-  --font-weight-500: 500;
-  --font-weight-600: 600;
-  --font-weight-regular: 400;
-  --font-color-white: #fff;
-  --font-color-dark: #121212;
-  --font-color-pink: #CE6E6E;
 }
