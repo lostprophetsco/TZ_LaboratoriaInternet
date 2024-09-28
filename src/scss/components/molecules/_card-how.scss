@@ -1,0 +1,45 @@
+@use '../../theme/theme' as theme;
+
+.card-how {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 16px;
+  align-items: flex-start;
+
+  @include theme.lg {
+    flex-flow: column;
+  }
+
+  // .card-how__icon
+  &__icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+
+    @include theme.lg {
+      width: 72px;
+      height: 72px;
+    }
+  }
+
+  // .card-how__text
+  &__text {
+    flex-grow: 1;
+  }
+
+  // .card-how__title
+  &__title {
+    @include theme.text-style-helper(h6);
+
+    font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
+    color: var(--colors-black);
+  }
+
+  // .card-how__description
+  &__description {
+    @include theme.text-style-helper(b14);
+
+    margin-top: 4px;
+    color: var(--colors-dark-gray);
+  }
+}
