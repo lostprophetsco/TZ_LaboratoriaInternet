@@ -1,0 +1,43 @@
+.burger {
+	display: flex;
+	flex-shrink: 0;
+	flex-flow: column;
+	gap: 8px;
+	align-items: center;
+	justify-content: center;
+	width: 62px;
+	height: 62px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+
+	// .burger span
+	span {
+		display: block;
+		width: 22px;
+		height: 2px;
+		background-color: var(--colors-white);
+		transition: all var(--transition-time-20) ease-out;
+		transform-origin: center;
+	}
+
+	// .burger:hover, .burger:focus, .burger:active
+	&:hover, &:focus, &:active {
+		// .burger:hover span, .burger:focus span, .burger:active span
+		span {
+			background-color: var(--colors-accent-success);
+		}
+	}
+
+	&--active {
+		// .burger--active span:first-child
+		span:first-child {
+			transform: rotate(45deg) translate(4px, 4px);
+		}
+
+		// .burger--active span:last-child
+		span:last-child {
+			transform: rotate(-45deg) translate(3px, -3px);
+		}
+	}
+}
