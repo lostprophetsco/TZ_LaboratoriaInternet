@@ -1,0 +1,12 @@
+@use '../../theme/theme' as theme;
+
+.footer {
+	padding: 28px 0;
+	border-top: 1px var(--colors-light-gray) solid;
+
+  &__container {
+    text-align: center;
+
+    @include theme.text-style-helper(b18);
+  }
+}
