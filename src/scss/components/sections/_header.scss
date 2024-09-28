@@ -80,10 +80,6 @@
       z-index: 10;
       background-image: url('../../../images/logo-dark.svg');
 
-      @include theme.md {
-        background-image: url('../../../images/logo-light.svg');
-      }
-
       // .header__logo--active img
       img{
         opacity: 0;
@@ -109,15 +105,6 @@
       display: block;
       padding-top: 80px;
       background-color: var(--colors-white);
-
-      @include theme.md {
-        position: static;
-        inset: unset;
-        display: flex;
-        width: auto;
-        padding: 0;
-        background: transparent;
-      }
     }
   }
 
