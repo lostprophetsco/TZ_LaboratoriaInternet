@@ -25,7 +25,7 @@ const menuToggle = () => {
     burger.classList.remove('burger--active');
     nav.classList.remove('header__nav--active');
     document.body.classList.remove('overflow-hidden');
-  }, 500);
+  }, 200);
 
   window.addEventListener('resize', removeClassesPerWidth);
 };
