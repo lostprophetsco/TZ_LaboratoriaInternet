@@ -10,6 +10,7 @@
 	cursor: pointer;
 	background: transparent;
 	border: none;
+	transition: all var(--transition-time-20) var(--transition-easing-easeinout);
 
 	// .burger span
 	span {
@@ -23,7 +24,10 @@
 
 	// .burger--active
 	&--active {
+		position: relative;
 		z-index: 10;
+		transform: translateX(var(--fields));
+
 
 		// .burger--active span
 		span {
