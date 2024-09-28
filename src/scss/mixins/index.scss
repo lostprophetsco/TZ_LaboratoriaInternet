@@ -45,3 +45,11 @@
 		font-display: swap;
 	}
 }
+
+@mixin image-set($bg, $webp, $avif) {
+	background-image: image-set(
+		$bg type('image/jpeg'),
+		$webp type('image/webp'),
+		$avif type('image/avif')
+	);
+}
