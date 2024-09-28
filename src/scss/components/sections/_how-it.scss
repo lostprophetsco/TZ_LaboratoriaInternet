@@ -1,0 +1,30 @@
+@use '../../theme/theme' as theme;
+
+.how-it {
+	padding: 56px 0;
+	background-color: var(--colors-white);
+
+	@include theme.lg {
+		padding: 80px 0;
+	}
+
+	// .how-it__title
+	&__title {
+		text-align: center;
+	}
+
+	// .how-it__body
+	&__body {
+		@include theme.grid(1,1,2);
+
+		margin-top: 26px;
+
+		@include theme.md {
+			margin-top: 42px;
+		}
+
+		@include theme.lg {
+			margin-top: 60px;
+		}
+	}
+}
