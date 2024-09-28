@@ -24,11 +24,13 @@
 	// .button-default--primary
 	&--primary {
 		color: var(--colors-white);
-		background-color: var(--colors-accent-primary);
+		background-color: var(--colors-primary);
+		border: none;
 
 		// .button-default--primary:hover, .button-default--primary:focus, .button-default--primary:focus-within, .button-default--primary:active
 		&:hover, &:focus, &:focus-within, &:active {
-			background-color: var(--colors-accent-primary-hover);
+			background-color: var(--colors-primary-hover);
+			border: none;
 		}
 	}
 }
