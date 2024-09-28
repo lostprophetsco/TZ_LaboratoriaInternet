@@ -1,0 +1,86 @@
+@use '../../theme/theme' as theme;
+
+.wow-third {
+	padding: 23px 0 56px	;
+	background-color: var(--colors-white);
+
+	@include theme.lg {
+		padding: 40px 0 80px;
+	}
+
+	// .wow-third__container
+	&__container {
+		@include theme.grid(1,1,2);
+
+		gap: 27px;
+		align-items: center;
+
+		@include theme.sm {
+			gap: 7px;
+		}
+
+		@include theme.md {
+		gap: 24px;
+		}
+
+		@include theme.lg {
+			gap: var(--gap);
+		}
+	}
+
+	// .wow-third__image
+	&__image {
+		@include theme.md {
+			order: 2;
+		}
+
+		// .wow-third__image img
+		img {
+			margin: 0 auto;
+		}
+	}
+
+	// .wow-third__text
+	&__text {
+		@include theme.md {
+			order: 1;
+		}
+	}
+
+	// .wow-third__title
+	&__title {
+		@include theme.text-style-helper(h5);
+
+		font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
+		text-align: center;
+
+		@include theme.md {
+			text-align: left;
+		}
+	}
+
+	// .wow-third__description
+	&__description {
+		display: flex;
+		flex-flow: column;
+		gap: 30px;
+		margin-top: 27px;
+		color: var(--colors-dark-gray);
+		text-align: center;
+
+		@include theme.text-style-helper(b16);
+
+		@include theme.sm {
+			margin-top: 0;
+		}
+
+		@include theme.md {
+			margin-top: 15px;
+			text-align: left;
+		}
+
+		@include theme.lg {
+			margin-top: 18px;
+		}
+	}
+}
