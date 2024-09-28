@@ -21,15 +21,15 @@
 		transform-origin: center;
 	}
 
-	// .burger:hover, .burger:focus, .burger:active
-	&:hover, &:focus, &:active {
-		// .burger:hover span, .burger:focus span, .burger:active span
-		span {
-			background-color: var(--colors-accent-success);
-		}
-	}
-
+	// .burger--active
 	&--active {
+		z-index: 10;
+
+		// .burger--active span
+		span {
+			background-color: var(--colors-black);
+		}
+
 		// .burger--active span:first-child
 		span:first-child {
 			transform: rotate(45deg) translate(4px, 4px);
