@@ -2,24 +2,36 @@
 
 h1 {
   @include mixins.text-style-helper(h1);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
 
 h2 {
-	@include mixins.text-style-helper(h2);
+  @include mixins.text-style-helper(h2);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
 
 h3 {
-	@include mixins.text-style-helper(h3);
+  @include mixins.text-style-helper(h3);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
 
 h4 {
-	@include mixins.text-style-helper(h4);
+  @include mixins.text-style-helper(h4);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
 
 h5 {
-	@include mixins.text-style-helper(h5);
+  @include mixins.text-style-helper(h5);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
 
 h6 {
-	@include mixins.text-style-helper(h6);
+  @include mixins.text-style-helper(h6);
+
+  font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
 }
