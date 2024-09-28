@@ -38,17 +38,9 @@ $break-lg: 1920px;
   }
 
   @include md {
-    --container: 100%;
-    --debug-container: '100%';
-    --debug-breakpoint: 'md';
-    --fields: 20px;
-    --debug-fields: '20px';
-  }
-
-  @include lg {
     --container: 1256px;
     --debug-container: '1256px';
-    --debug-breakpoint: 'lg';
+    --debug-breakpoint: 'md';
     --fields: 20px;
     --debug-fields: '20px';
   }
