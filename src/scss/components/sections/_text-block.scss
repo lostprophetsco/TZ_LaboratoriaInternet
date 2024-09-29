@@ -1,0 +1,46 @@
+@use '../../theme/theme' as theme;
+
+.text-block {
+	padding: 16px 0;
+	background-color: var(--colors-extra-light-gray);
+
+	@include theme.sm {
+		padding: 20px 0;
+	}
+
+	@include theme.lg {
+		padding: 68px 0;
+	}
+
+	// .text-block__container
+	&__container {
+		@include theme.grid(1,1,2);
+	}
+
+	// .text-block__item
+	&__item {
+		display: flex;
+		flex-flow: column;
+		gap: 14px;
+
+		@include theme.md {
+			gap: 46px;
+		}
+
+		@include theme.lg {
+			gap: 17px;
+		}
+	}
+
+	// .text-block__title
+	&__title {
+		@include theme.text-style-helper(b18bold);
+
+		font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
+	}
+
+	// .text-block__text
+	&__text {
+		@include theme.text-style-helper(b16);
+	}
+}
