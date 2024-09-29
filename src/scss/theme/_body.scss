@@ -3,6 +3,10 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
   font-family: var(--fonts-family-default), ui-sans-serif, sans-serif;
