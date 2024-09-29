@@ -1,11 +1,12 @@
 @use './theme/theme' as theme;
 @import 'mixins';
-@import '../../node_modules/reset-css/sass/reset';
+@import 'node_modules/reset-css/sass/reset';
 @import './theme/core';
 @import './theme/theme';
 @import 'components/atoms';
 @import './components/molecules';
 @import './components/sections';
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
 :root {
   @include theme.grid-settings;

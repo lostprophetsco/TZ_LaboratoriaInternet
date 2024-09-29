@@ -1,0 +1,67 @@
+@use '../../theme/theme' as theme;
+
+.card-review {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  padding: 22px;
+  margin: 25px 0;
+  background-color: var(--colors-white);
+  border-radius: var(--radius-8);
+  box-shadow: 0 5px 24px 0 #0000001a;
+  transition: box-shadow var(--transition-time-20) var(--transition-easing-easeinout);
+
+  // .card-review:hover, .card-review:focus, .card-review:focus-within, .card-review:active
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    box-shadow: 0 15px 24px 0 #0000001a;
+  }
+
+  // .card-review__header
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  // .card-review__image
+  &__image {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    overflow: hidden;
+    background: url('../../../images/css/reviews-img.svg') no-repeat center;
+    border-radius: var(--radius-50percent);
+  }
+
+  // .card-review__info
+  &__info {
+    flex-grow: 1;
+		white-space: normal;
+  }
+
+  // .card-review__name
+  &__name {
+    @include theme.text-style-helper(h6);
+
+    font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
+  }
+
+  // .card-review__city
+  &__city {
+    margin-top: 4px;
+    color: var(--colors-dark-gray);
+
+    @include theme.text-style-helper(b12);
+  }
+
+  // .card-review__text
+  &__text {
+    @include theme.text-style-helper(b14);
+
+		white-space: normal;
+  }
+}

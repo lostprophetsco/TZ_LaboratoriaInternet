@@ -1,0 +1,144 @@
+@use '../../theme/theme' as theme;
+
+.reviews {
+	padding: 27px 0 33px;
+	background-color: var(--colors-extra-light-gray);
+
+	@include theme.sm {
+		padding: 27px 0 37px;
+	}
+
+	@include theme.md {
+		padding: 33px 0 45px;
+	}
+
+	@include theme.lg {
+		padding: 57px 0 45px;
+	}
+
+	// .reviews__title
+	&__title {
+		@include theme.text-style-helper(h2);
+
+		font-family: var(--fonts-family-bold), ui-sans-serif, sans-serif;
+		text-align: center;
+	}
+
+	// .reviews__slider
+	&__slider {
+		position: relative;
+		margin-top: 1px;
+
+		@include theme.md {
+			margin-top: 7px;
+		}
+
+		@include theme.lg {
+			padding: 0 64px;
+		}
+	}
+
+	// .reviews__slider-slides
+	&__slides {
+		overflow: clip !important;
+		overflow-clip-margin: 30px;
+	}
+
+	// .reviews__slider-track
+	&__slider-track {
+		overflow: clip !important;
+		overflow-clip-margin: 20px;
+
+		@include theme.lg {
+			overflow-clip-margin: 15px;
+		}
+	}
+
+	// .reviews__slide-controls
+	&__slide-controls {
+		display: none;
+
+		@include theme.lg {
+			display: block;
+		}
+	}
+
+	// .reviews__slide-control
+	&__slide-control {
+		position: absolute;
+		top: 50%;
+		display: block;
+		width: 32px;
+		height: 32px;
+		cursor: pointer;
+		background: none;
+		border: none;
+		transform: translateY(-100%);
+
+		// .reviews__slide-control svg
+		svg {
+			fill: var(--colors-mid-gray);
+			transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+		}
+
+		// .reviews__slide-control:hover, .reviews__slide-control:focus, .reviews__slide-control:focus-within, .reviews__slide-control:active
+		&:hover,
+		&:focus,
+		&:focus-within,
+		&:active {
+			svg {
+				fill: var(--colors-primary);
+			}
+		}
+
+		// .reviews__slide-control--prev
+		&--prev {
+			left: -12px;
+		}
+
+		// .reviews__slide-control--next
+		&--next {
+			right: -12px;
+		}
+	}
+
+	// .reviews__slide-bullets
+	&__slide-bullets {
+		display: flex;
+		gap: 17px;
+		justify-content: center;
+		width: 100%;
+		margin-top: 13px;
+
+		@include theme.sm {
+			margin-top: 15px;
+		}
+
+		@include theme.md {
+			margin-top: 25px;
+		}
+	}
+
+
+	// .reviews .glide
+	.glide {
+		// .reviews .glide__bullet
+		&__bullet {
+			display: block;
+			width: 8px;
+			height: 8px;
+			padding: 0;
+			cursor: pointer;
+			background-color: var(--colors-mid-gray);
+			border: none;
+			border-radius: var(--radius-50percent);
+			transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+
+			// .reviews .glide__bullet--active
+			&--active {
+				background-color: var(--colors-primary);
+			}
+		}
+	}
+
+}
