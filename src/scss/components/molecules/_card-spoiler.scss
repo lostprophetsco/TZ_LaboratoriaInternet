@@ -57,6 +57,7 @@
     color: var(--colors-dark-gray);
     opacity: 0;
     transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+    will-change: max-height, opacity;
 
     @include theme.text-style-helper(b18);
   }
