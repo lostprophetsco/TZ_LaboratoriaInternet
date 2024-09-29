@@ -1,0 +1,64 @@
+@use '../../theme/theme' as theme;
+
+.spoiler {
+  $this: &;
+
+  padding: 24px 0;
+  overflow: hidden;
+  border-top: 1px var(--colors-light-gray) solid;
+
+  // .spoiler:first-child
+  &:first-child {
+    border-top: none;
+  }
+
+  // .spoiler__title
+  &__title {
+    @include theme.text-style-helper(b18bold);
+
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-right: 34px;
+    font-family: var(--fonts-family-medium), ui-sans-serif, sans-serif;
+    cursor: pointer;
+
+    // .spoiler__title::after
+    &::after {
+      position: absolute;
+      top: 4px;
+      right: 0;
+      width: 24px;
+      height: 24px;
+      content: '';
+      background-image: url('../../../images/css/spoiler-plus.svg');
+      transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+    }
+  }
+
+  // .spoiler__text
+  &__text {
+    max-height: 0;
+    overflow: hidden;
+    color: var(--colors-dark-gray);
+    transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+
+    @include theme.text-style-helper(b18);
+  }
+
+  // .spoiler--expanded
+  &--expanded {
+    // .spoiler--expanded .spoiler__title
+    #{$this}__title {
+      // .spoiler--expanded .spoiler__title::after
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+
+    // .spoiler--expanded .spoiler__text
+    #{$this}__text {
+      margin-top: 16px;
+    }
+  }
+}

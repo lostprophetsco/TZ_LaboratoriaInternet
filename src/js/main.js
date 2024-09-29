@@ -1,4 +1,5 @@
 import { menuToggle } from './helpers/menuToggle.js';
+import spoilers from './modules/spoilers.js';
 import Glide, {
   Controls,
   Breakpoints,
@@ -7,6 +8,7 @@ import Glide, {
 } from '@glidejs/glide/dist/glide.modular.esm';
 
 menuToggle();
+spoilers();
 
 const glideOptions = {
   type: 'carousel',
