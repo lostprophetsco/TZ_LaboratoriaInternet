@@ -6,7 +6,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20240929172649">
+  <link rel="stylesheet" href="css/main.min.css?_v=20240930141659">
   <title>TZ_LaboratoriaInternet</title>
 </head>
 
@@ -20,16 +20,16 @@
     <nav class="header__nav" aria-label="Навигация" role="navigation">
       <ul class="header__nav-list">
         <li class="header__nav-item">
-          <a class="header__nav-link" href="#">Как это работает</a>
+          <a class="header__nav-link" href="#how">Как это работает</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link" href="#">3-й блок</a>
+          <a class="header__nav-link" href="#third">3-й блок</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link" href="#">Вопросы и ответы</a>
+          <a class="header__nav-link" href="#faq">Вопросы и ответы</a>
         </li>
         <li class="header__nav-item">
-          <a class="header__nav-link" href="#">Форма</a>
+          <a class="header__nav-link" href="#form">Форма</a>
         </li>
       </ul>
     </nav>
@@ -54,7 +54,7 @@
 
 
     <main class="main">
-      <section class="how-it">
+      <section class="how-it" id="how">
   <div class="container">
     <h2 class="how-it__title">Как это работает</h2>
 
@@ -111,7 +111,7 @@
     </div>
   </div>
 </section>
- <section class="wow-third">
+ <section class="wow-third" id="third">
   <div class="container wow-third__container">
     <div class="wow-third__image">
       <picture>
@@ -234,7 +234,7 @@
     </div>
   </div>
 </section>
- <div class="faq">
+ <div class="faq" id="faq">
   <div class="container">
     <h2 class="faq__title">Вопросы и ответы</h2>
 
@@ -327,13 +327,55 @@
     </div>
   </div>
 </div>
+ <div class="form" id="form">
+  <div class="container">
+    <h2 class="form__title">Отправь форму</h2>
+
+    <form class="form__form">
+      <div class="form-group input__group">
+        <label class="input__label">
+          <span class="input__label-text">Имя</span>
+          <input class="input__input input__input--text" type="text" name="name" placeholder="Имя" required>
+          <span class="input__error">Введите имя</span>
+        </label>
+      </div>
+
+      <div class="form-group input__group">
+        <label class="input__label">
+          <span class="input__label-text">Телефон</span>
+          <input class="input__input input__input--tel" type="text" name="phone" placeholder="Телефон" required>
+          <span class="input__error">Введите телефон</span>
+        </label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label class="checkbox__label">
+          <input type="checkbox" name="option" id="option2" class="checkbox__input">
+          <span class="checkbox__checkmark"></span>
+          <span class="checkbox__text">Согласен, отказываюсь</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button class="button-default button-default--primary form__submit" type="submit">
+          Отправить
+        </button>
+      </div>
+
+      <div class="form__loader">
+        Отправляем данные, также выводим в консоль. <br>
+        Очищаем форму, показываем сообщение об успехе.
+      </div>
+    </form>
+  </div>
+</div>
 
     </main>
 
     <footer class="footer">
   <div class="container footer__container">© 2021 Лаборатория интернет</div>
 </footer>
- <script src="js/main.min.js?_v=20240929172649"></script>
+ <script src="js/main.min.js?_v=20240930141659"></script>
 
   </body>
 </html>
