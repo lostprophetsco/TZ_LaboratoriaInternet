@@ -1,0 +1,136 @@
+@use '../../theme/theme' as theme;
+
+.input {
+	$this: &;
+
+	// .input__group
+	&__group {
+		display: inline-flex;
+	}
+
+	// .input__label
+	&__label {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 64px;
+		padding: 8px 16px;
+		font-family: var(--fonts-family-default), ui-sans-serif, sans-serif;
+		cursor: pointer;
+		background-color: var(--colors-extra-light-gray);
+		border: 2px var(--colors-extra-light-gray) solid;
+		border-radius: var(--radius-4);
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 16px;
+			width: 20px;
+			height: 20px;
+			visibility: hidden;
+			content: '';
+			opacity: 0;
+			transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+			transform: translateY(-50%);
+		}
+
+		// .input__label--focused, .input__label--filled
+		&--focused, &--filled {
+			background-color: var(--colors-white);
+
+			// .input__label--focused .input__label-text,
+			// .input__label--filled .input__label-text
+			#{$this}__label-text {
+				@include theme.text-style-helper(b14);
+
+				color: var(--colors-gray);
+				transform: translateY(-10px);
+			}
+
+			// .input__label--focused .input__input,
+			// .input__label--filled .input__input
+			#{$this}__input {
+				opacity: 1;
+			}
+		}
+
+		// .input__label--error
+		&--error {
+			background-color: var(--colors-white);
+			border-color: var(--colors-accent-dangerous);
+
+			// .input__label--error::after
+			&::after {
+				visibility: visible;
+				background: url('../../../images/css/input-error.svg') no-repeat;
+				opacity: 1;
+			}
+		}
+
+		// .input__label--success
+		&--success {
+			background-color: var(--colors-white);
+			border-color: var(--colors-light-gray);
+
+			// .input__label--success::after
+			&::after {
+				visibility: visible;
+				background: url('../../../images/css/input-success.svg') no-repeat;
+				opacity: 1;
+			}
+		}
+	}
+
+	// .input__label-text
+	&__label-text {
+		@include theme.text-style-helper(b18);
+
+		position: absolute;
+		top: 16px;
+		color: var(--colors-dark-gray);
+		transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+		will-change: font-size, line-height, transform, color;
+	}
+
+	// .input__input
+	&__input {
+		@include theme.text-style-helper(b18);
+
+		padding: 0;
+		margin-top: 18px;
+		font-family: var(--fonts-family-default), ui-sans-serif, sans-serif;
+		color: var(--colors-black);
+		background-color: transparent;
+		border: none;
+		border: 0;
+		outline: none;
+		opacity: 0;
+		transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+
+		&::placeholder {
+			color: var(--colors-mid-gray);
+
+			@include theme.text-style-helper(b18);
+		}
+	}
+
+	// .input__error
+	&__error {
+		@include theme.text-style-helper(b12);
+
+		position: absolute;
+		bottom: -18px;
+		left: 0;
+		color: var(--colors-accent-dangerous);
+		visibility: hidden;
+		opacity: 0;
+		transition: all var(--transition-time-20) var(--transition-easing-easeinout);
+
+		// .input__error--visible
+		&--visible {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}

@@ -34,4 +34,11 @@
 			border: none;
 		}
 	}
+
+	// .button-default[disabled]
+	&[disabled] {
+		pointer-events: none;
+		background-color: var(--colors-gray);
+		opacity: 0.5;
+	}
 }

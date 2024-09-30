@@ -1,3 +1,54 @@
 <div class="form" id="form">
-  <div class="container">123</div>
+  <div class="container">
+    <h2 class="form__title">Отправь форму</h2>
+
+    <form class="form__form">
+      <div class="form-group input__group">
+        <label class="input__label">
+          <span class="input__label-text">Имя</span>
+          <input
+            class="input__input input__input--text"
+            type="text"
+            name="name"
+            placeholder="Имя"
+            required
+          />
+          <span class="input__error">Введите имя</span>
+        </label>
+      </div>
+
+      <div class="form-group input__group">
+        <label class="input__label">
+          <span class="input__label-text">Телефон</span>
+          <input
+            class="input__input input__input--tel"
+            type="text"
+            name="phone"
+            placeholder="Телефон"
+            required
+          />
+          <span class="input__error">Введите телефон</span>
+        </label>
+      </div>
+
+      <div class="form-group checkbox">
+        <label class="checkbox__label">
+          <input type="checkbox" name="option" id="option2" class="checkbox__input" />
+          <span class="checkbox__checkmark"></span>
+          <span class="checkbox__text">Согласен, отказываюсь</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <button class="button-default button-default--primary form__submit" type="submit">
+          Отправить
+        </button>
+      </div>
+
+      <div class="form__loader">
+        Отправляем данные, также выводим в консоль. <br />
+        Очищаем форму, показываем сообщение об успехе.
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,5 +1,7 @@
 import { menuToggle } from './helpers/menuToggle.js';
 import spoilers from './modules/spoilers.js';
+import inputsWatchers from './modules/inputsWatchers.js';
+import formHandler from './modules/formHandler.js';
 import Glide, {
   Controls,
   Breakpoints,
@@ -9,6 +11,9 @@ import Glide, {
 
 menuToggle();
 spoilers();
+inputsWatchers('.input__input--text', 'text');
+inputsWatchers('.input__input--tel', 'tel');
+formHandler();
 
 const glideOptions = {
   type: 'carousel',

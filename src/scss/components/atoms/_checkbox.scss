@@ -1,0 +1,62 @@
+@use '../../theme/theme' as theme;
+
+.checkbox {
+	@include theme.text-style-helper(b16);
+
+	// .checkbox__label
+	&__label {
+		display: flex;
+		flex-flow: row nowrap;
+		gap: 16px;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	// .checkbox__input
+	&__input {
+		display: none;
+	}
+
+	// .checkbox__checkmark
+	&__checkmark {
+		position: relative;
+		display: inline-flex;
+		flex-shrink: 0;
+		width: 24px;
+		height: 24px;
+		min-height: 24px;
+		padding: 0;
+		cursor: pointer;
+		background: transparent;
+		border: 1px solid var(--colors-mid-gray);
+		border-radius: var(--radius-4);
+		transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+
+		// .checkbox__checkmark::after
+		&::after {
+			position: absolute;
+			top: 55%;
+			right: 50%;
+			width: 10px;
+			height: 4px;
+			content: '';
+			border-right: 2px solid var(--colors-white);
+			border-bottom: 2px solid var(--colors-white);
+			opacity: 0;
+			transition: all var(--transition-time-200) var(--transition-easing-easeinout);
+			transform: rotate(315deg) scale(-1, 1) translateY(-50%);
+			transform-origin: right bottom;
+		}
+	}
+
+	// .checkbox__input:checked + .checkbox__checkmark
+	&__input:checked + &__checkmark {
+		background: var(--colors-primary);
+		border: 1px solid var(--colors-primary);
+	}
+
+	// .checkbox__input:checked + .checkbox__checkmark::after
+	&__input:checked + &__checkmark::after {
+		opacity: 1;
+	}
+}
